@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: taqbv17jl-go
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: taqbv17jl-go 
+  name: taqbv17jl-go
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: taqbv17jl-go
+    weight: 100 
